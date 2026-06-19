@@ -666,8 +666,8 @@
   // Fill these two in with your Athlete Infrastructure Supabase project values.
   // The anon (publishable) key is safe to expose in client-side code as long as
   // your "subscribers" table has an INSERT-only RLS policy for the anon role.
-  const SUPABASE_URL = 'https://YOUR_PROJECT_REF.supabase.co';
-  const SUPABASE_ANON_KEY = 'YOUR_ANON_PUBLISHABLE_KEY';
+  const SUPABASE_URL = 'https://jscxtwjsddbshvrdrjhp.supabase.co';
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpzY3h0d2pzZGRic2h2cmRyamhwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgyNzAyMzMsImV4cCI6MjA5Mzg0NjIzM30.pCUo1PWPwzgDRawXiHvU_my77P7UMKYJPFNTgdo7EZE';
 
   async function handleSignup() {
     const input = document.getElementById('email-input');
@@ -695,7 +695,7 @@
     status.textContent = 'Submitting…';
 
     try {
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/subscribers`, {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/marketing_subscribers`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
