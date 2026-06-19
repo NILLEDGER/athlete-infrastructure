@@ -695,15 +695,15 @@
     status.textContent = 'Submitting…';
 
     try {
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/marketing_subscribers`, {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/add_subscriber`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'apikey': SUPABASE_ANON_KEY,
           'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-          'Prefer': 'return=minimal,resolution=ignore-duplicates'
+          'Prefer': 'return=minimal'
         },
-        body: JSON.stringify({ email: email, source: 'athleteinfrastructure.com' })
+        body: JSON.stringify({ p_email: email, p_source: 'athleteinfrastructure.com' })
       });
 
       if (!res.ok) throw new Error('Request failed: ' + res.status);
